@@ -1,3 +1,25 @@
+// practice 14
+let products = [
+  { name: "蘋果", price: 100 },
+  { name: "水梨", price: null },
+  { name: "香蕉", price: 200 },
+  { name: "橘子", price: 300 },
+  { name: "葡萄", price: 400 }
+];
+
+for(let product of products){
+  if(product.price === null){
+    continue;
+  }
+  
+  if(product.price >= 300){
+    for(key in product){
+      console.log(`${key}: ${product[key]}`);
+    }
+    break;
+  }
+}
+
 // practice 13
 let price1 = '10';
 let price2 = '10';
