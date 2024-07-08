@@ -1,3 +1,21 @@
+// practice 10
+function countSum(array){
+  for(let i = 0; i < array.length; i++){
+    let n = array[i];
+    let sum = 0;
+    for(let i = 1; i <= n; i++){
+      sum += i;
+    }
+
+    console.log(sum);
+  }
+  
+  return true;
+}
+
+let result = countSum([3, 10, 13]);
+console.log(result);
+
 // practice 9
 let array = [3, 10, 13];
 for(let i = 0; i < array.length; i++){
