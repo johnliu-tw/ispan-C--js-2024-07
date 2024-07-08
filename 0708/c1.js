@@ -1,3 +1,25 @@
+// practice 9
+let array = [3, 10, 13];
+for(let i = 0; i < array.length; i++){
+  let n = array[i];
+  let sum = 0;
+  for(let i = 1; i <= n; i++){
+    sum += i;
+  }
+
+  console.log(sum);
+}
+
+
+
+// practice 8
+let students = ['Alice', 'Bob'];
+students.push('Charlie');
+students.unshift('David');
+students.splice(1, 1);
+console.log(students);
+console.log(students.length);
+
 // practice 7
 for(let y = 1; y <= 9; y++){
   for(let z = 1; z <= 9; z++){
