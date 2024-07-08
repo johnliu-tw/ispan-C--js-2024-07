@@ -1,3 +1,15 @@
+// practice 5
+let n = 10;
+let sum = 0;
+let i = 1;
+
+while(i <= n){
+  sum += i;
+  i ++;
+}
+
+console.log(sum);
+
 // practice 4
 let weekNumber = 1;
 switch(weekNumber){
