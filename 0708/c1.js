@@ -1,3 +1,18 @@
+// practice 11
+function countPapaya(array){
+  let count = 0;
+  for(let i = 0; i< array.length; i++){
+    if(array[i] === 'Papaya'){
+      count++;
+    }
+  }
+  
+  return count;
+}
+
+let result = countPapaya(['Orange', 'Apple', 'Papaya', 'Kiwi', 'Papaya']);
+console.log(result)
+
 // practice 10
 function countSum(array){
   for(let i = 0; i < array.length; i++){
