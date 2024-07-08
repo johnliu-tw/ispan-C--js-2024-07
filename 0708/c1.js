@@ -1,3 +1,35 @@
+// practice 15
+let person = {
+  name: '野原新之助',
+  age: 5,
+  hobbies: ['drawing', 'coding','reading', 'swimming', 'skating', 'running'],
+  getInfo: function(){
+    return `你好, 我是 ${this.name}, 今年 ${this.age}歲`; 
+  },
+  isAdult: function(){
+    return this.age >= 18 ? true : false;
+  },
+  printHobbies: function(){
+    let count = 1;
+    for(hobby of this.hobbies){
+      if(hobby === 'coding'){
+        continue;
+      }
+      
+      count++;
+      console.log(`hobby:${hobby}`);
+      if(count === 5){
+         break;
+      }
+    }
+  }
+}
+
+console.log(person.getInfo());
+console.log(person.isAdult());
+person.printHobbies();
+
+
 // practice 14
 let products = [
   { name: "蘋果", price: 100 },
