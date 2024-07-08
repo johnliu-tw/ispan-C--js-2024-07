@@ -1,3 +1,24 @@
+// practice 7
+for(let y = 1; y <= 9; y++){
+  for(let z = 1; z <= 9; z++){
+    if(y === z){
+      console.log(y + " x " + z + " = " + y*z + " 棒!");
+    } else {
+      console.log(y + " x " + z + " = " + y*z);
+    }
+  }
+}
+
+// practice 6
+let n = 10;
+let sum = 0;
+for(let i = 1; i <= n; i++){
+  sum += i;
+}
+
+console.log(sum);
+
+
 // practice 5
 let n = 10;
 let sum = 0;
