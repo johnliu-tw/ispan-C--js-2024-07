@@ -45,7 +45,7 @@ for(let product of products){
   }
   
   if(product.price >= 300){
-    for(key in product){
+    for(let key in product){
       console.log(`${key}: ${product[key]}`);
     }
     break;
