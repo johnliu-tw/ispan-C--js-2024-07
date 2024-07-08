@@ -1,3 +1,11 @@
+// practice 13
+let price1 = '10';
+let price2 = '10';
+
+let sum = parseInt(price1) + parseInt(price2);
+console.log(`嗨，您的價格${ sum >= 50 ? '' : '沒有'}超過限制`);
+
+
 // practice 12
 let fruitSeller = {
   name: '野原新之助',
