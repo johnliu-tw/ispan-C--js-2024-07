@@ -1,3 +1,18 @@
+// practice 3
+let questions = 50;
+let totalScore = 0;
+if(questions <= 10){
+  totalScore = questions * 6;
+} else if (questions <= 20){
+  totalScore = 10 * 6 + (questions - 10) * 2;
+} else if (questions <= 40){
+  totalScore = 10 * 6 + 10 * 2 + (questions - 20) * 1;
+} else {
+  totalScore = 100;
+}
+
+console.log(totalScore);
+
 // practice 2
 let grade = 35;
 if(grade >= 90){
