@@ -1,3 +1,26 @@
+// practice 12
+let fruitSeller = {
+  name: '野原新之助',
+  age: 5,
+  fruits: ['Orange', 'Apple', 'Papaya', 'Kiwi', 'Papaya'],
+  countFruits: function(fruitName){
+    let count = 0;
+    for(let i = 0; i< this.fruits.length; i++){
+      if(this.fruits[i] === fruitName){
+        count++;
+      }
+    }
+
+    return count;
+  },
+  getInfo: function(){
+    return "你好, 我是" + this.name + ", 今年" + this.age + "歲";
+  }
+}
+
+console.log(fruitSeller.countFruits('Apple'));
+console.log(fruitSeller.getInfo());
+
 // practice 11
 function countPapaya(array){
   let count = 0;
