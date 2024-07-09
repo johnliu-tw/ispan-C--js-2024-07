@@ -1,3 +1,8 @@
+// practice2
+let calculateDiscount = (price, discount = 0.2) => console.log(price * (1- discount));
+calculateDiscount(100);
+calculateDiscount(100, 0.3);
+
 // practice1
 function findMax(...numbers){
   let max = 0;
