@@ -1,3 +1,15 @@
+// practice4
+let inviteList = ['John', 'Dave', 'Macy'];
+let newInviteList = ['Judy', 'Tom'];
+
+console.log(inviteList.includes('Dave'));
+console.log(inviteList.indexOf('Dave'));
+inviteList = inviteList.concat(newInviteList);
+inviteList = inviteList.reverse();
+inviteList = inviteList.join(',');
+console.log(inviteList);
+
+
 // practice3
 let str = "Visit my blogs http://blog1.com and https://blog2.com for more info."
 
