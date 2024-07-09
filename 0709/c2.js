@@ -1,3 +1,36 @@
+// practice6
+const getTaiwanDate = function(year = 0, month = -1, date = 0){
+  const dateObject = new Date();
+  if(year !== 0){
+    dateObject.setFullYear(year);
+  }
+  if(month !== -1){
+    dateObject.setMonth(month-1);
+  }
+  if(date !== 0){
+    dateObject.setDate(date);
+  }
+  
+  const twYear = dateObject.getFullYear() - 1911;
+  let twMonth = dateObject.getMonth() + 1;
+  let twDate = dateObject.getDate();
+  twMonth = twMonth > 9 ? twMonth : ('0' + twMonth);
+  twDate = twDate > 9 ? twDate : ('0' + twDate);
+  
+  return `${twYear}-${twMonth}-${twDate}`;
+}
+
+console.log(getTaiwanDate(2024, 10, 4));
+
+const getLuckyNumber = function(min = 20, max = 46){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  
+  return Math.round((Math.random() * (max - min)) + min);
+}
+
+console.log(getLuckyNumber(1.44, 3.89));
+
 // practice5
 const numbers = [5, 2, -8, 12, 15];
 
