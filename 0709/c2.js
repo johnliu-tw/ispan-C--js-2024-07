@@ -1,10 +1,10 @@
 // practice6
-const getTaiwanDate = function(year = 0, month = -1, date = 0){
+const getTaiwanDate = function(year = 0, month = 0, date = 0){
   const dateObject = new Date();
   if(year !== 0){
     dateObject.setFullYear(year);
   }
-  if(month !== -1){
+  if(month !== 0){
     dateObject.setMonth(month-1);
   }
   if(date !== 0){
