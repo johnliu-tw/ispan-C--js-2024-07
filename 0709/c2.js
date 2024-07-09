@@ -1,3 +1,22 @@
+// practice5
+const numbers = [5, 2, -8, 12, 15];
+
+let result1 = Math.max(...numbers);
+let result2 = Math.min(...numbers);
+
+let newNumbers = [];
+for(let number of numbers){
+  newNumbers.push(Math.abs(number));
+}
+let result3 = Math.max(...newNumbers);
+let result4 = Math.sqrt(Math.pow(2, 6));
+let result5 = Math.ceil(-5.7);
+let result6 = Math.floor(15.2);
+let result7 = Math.round(12.4);
+
+console.log(result1 + result2 + result3 + result4 + result5 + result6 + result7)
+
+
 // practice4
 let inviteList = ['John', 'Dave', 'Macy'];
 let newInviteList = ['Judy', 'Tom'];
