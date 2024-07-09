@@ -6,7 +6,18 @@ str = str.replaceAll('http://', '');
 let words = str.split(' ');
 for(let word of words ){
   if(word.endsWith('.com')){
+    // Repeat 無空格版
     console.log(word.repeat(3));
+
+    // 空格暴力版
+    // console.log(`${word} ${word} ${word}`);
+    
+    // 空格迴圈版
+    // let newWord = word;
+    // for(let i = 0; i < 2; i ++){
+    //   newWord += ` ${word}`;
+    // }
+    // console.log(newWord)
   }
 }
 
