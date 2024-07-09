@@ -1,3 +1,15 @@
+// practice3
+let str = "Visit my blogs http://blog1.com and https://blog2.com for more info."
+
+str = str.replaceAll('https://', '');
+str = str.replaceAll('http://', '');
+let words = str.split(' ');
+for(let word of words ){
+  if(word.endsWith('.com')){
+    console.log(word.repeat(3));
+  }
+}
+
 // practice2
 let calculateDiscount = (price, discount = 0.2) => console.log(price * (1- discount));
 calculateDiscount(100);
