@@ -1,3 +1,21 @@
+// practice1
+function findMax(...numbers){
+  let max = 0;
+  for(let number of numbers){
+    console.log('number:' + number);
+    console.log('max:' + max);
+    if(number > max){
+      max = number;
+    }
+  }
+  
+  console.log(max);
+}
+
+
+findMax(1,2,3,4,5);
+findMax(1,2,10,4,6);
+
 // Homework1
 
 let keyMap = {
