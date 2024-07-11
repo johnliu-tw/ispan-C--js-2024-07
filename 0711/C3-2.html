@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="userName">多拉D夢</h1>
+    <p id="userText" class="small">我是想要變大的字</p>
+    <button id="sayButton">點我</button>
+    <input type="number" id="originNum" />
+    <input id="resultNum" disabled/>
+    <script>
+			userName.innerText = '多拉Y夢';
+
+			userText.className = 'big';
+			userText.style.fontSize = 'large';
+
+			sayButton.addEventListener('click', function(){
+				alert('你好');
+			})
+
+			originNum.addEventListener('input', function(){
+				resultNum.value = Math.pow(originNum.value, 2);
+			})
+
+			
+    </script>
+  </body>
+</html>
