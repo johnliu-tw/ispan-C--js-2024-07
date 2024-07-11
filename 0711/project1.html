@@ -28,12 +28,28 @@
     </div>
     <script>
         let firstNumber = '';
+        let secondNumber = '';
+        let operator = '';
 
         const buttons = document.querySelectorAll('.number');
         for (let button of buttons) {
             button.addEventListener('click', function(){
-                firstNumber = firstNumber + button.innerText
-                display.value = firstNumber;
+                if(operator === ''){
+                    firstNumber = firstNumber + button.innerText
+                    display.value = firstNumber;
+                } else {
+                    secondNumber = secondNumber + button.innerText;
+                    display.value = secondNumber;
+                }
+            });
+        }
+
+        const operatorButtons = document.querySelectorAll('.operator');
+        for (const button of operatorButtons) {
+            button.addEventListener('click', function(){
+                if(firstNumber !== '' && secondNumber === ''){
+                    operator = button.innerText;
+                }
             });
         }
     </script>
