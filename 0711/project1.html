@@ -54,5 +54,28 @@
                 }
             });
         }
+
+        // 等於運算
+        equals.addEventListener('click', function(){
+            let result = 0;
+            let intFirstNumber = parseInt(firstNumber);
+            let intSecondNumber = parseInt(secondNumber);
+            switch(operator){
+                case '+':
+                    result = intFirstNumber + intSecondNumber;
+                    break;
+                case '-':
+                    result = intFirstNumber - intSecondNumber;
+                    break;
+                case '*':
+                    result = intFirstNumber * intSecondNumber;
+                    break;
+                case '/':
+                    result = intFirstNumber / intSecondNumber;
+                    break;
+            }
+
+            display.value = result;
+        })
     </script>
 </body>
