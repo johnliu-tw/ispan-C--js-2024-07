@@ -1,0 +1,12 @@
+<div>
+    <h1>測試標題</h1>
+</div>
+<script>
+    alert('歡迎訪問我們的網站!');
+    if(confirm('是否要打開新頁面?')){
+        const newWindow = window.open('example.html');
+        setTimeout(() => newWindow.close(), 3000);
+    }
+
+    setInterval(() => console.log(new Date()), 2000);
+</script>
