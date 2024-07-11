@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="display" disabled />
+        <br>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="number">0</button>
+        <br>
+        <button class="operator">+</button>
+        <button class="operator">-</button>
+        <button class="operator">*</button>
+        <button class="operator">/</button>
+        <button id="reset">Reset</button>
+        <button id="equals">=</button>
+    </div>
+    <script>
+        let firstNumber = '';
+
+        const buttons = document.querySelectorAll('.number');
+        for (let button of buttons) {
+            button.addEventListener('click', function(){
+                firstNumber = firstNumber + button.innerText
+                display.value = firstNumber;
+            });
+        }
+    </script>
+</body>
