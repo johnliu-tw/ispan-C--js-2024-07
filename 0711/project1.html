@@ -31,21 +31,19 @@
         let secondNumber = '';
         let operator = '';
 
-        // 數字按鈕處理
         const buttons = document.querySelectorAll('.number');
-        for (const button of buttons) {
+        for (let button of buttons) {
             button.addEventListener('click', function(){
                 if(operator === ''){
                     firstNumber = firstNumber + button.innerText
-                    display.value = firstNumber;
+                    display.value = addThousandSeparator(firstNumber);
                 } else {
                     secondNumber = secondNumber + button.innerText;
-                    display.value = secondNumber;
+                    display.value = addThousandSeparator(secondNumber);
                 }
             });
         }
 
-        // 運算符號處理
         const operatorButtons = document.querySelectorAll('.operator');
         for (const button of operatorButtons) {
             button.addEventListener('click', function(){
@@ -57,33 +55,51 @@
 
         // 等於運算
         equals.addEventListener('click', function(){
-            let result = 0;
-            let intFirstNumber = parseInt(firstNumber);
-            let intSecondNumber = parseInt(secondNumber);
-            switch(operator){
-                case '+':
-                    result = intFirstNumber + intSecondNumber;
-                    break;
-                case '-':
-                    result = intFirstNumber - intSecondNumber;
-                    break;
-                case '*':
-                    result = intFirstNumber * intSecondNumber;
-                    break;
-                case '/':
-                    result = intFirstNumber / intSecondNumber;
-                    break;
+            if(firstNumber !== '' && secondNumber !== '' && operator !== ''){
+                let result = 0;
+                let intFirstNumber = parseInt(firstNumber);
+                let intSecondNumber = parseInt(secondNumber);
+                switch(operator){
+                    case '+':
+                        result = intFirstNumber + intSecondNumber;
+                        break;
+                    case '-':
+                        result = intFirstNumber - intSecondNumber;
+                        break;
+                    case '*':
+                        result = intFirstNumber * intSecondNumber;
+                        break;
+                    case '/':
+                        result = intFirstNumber / intSecondNumber;
+                        break;
+                }
+
+                display.value = addThousandSeparator(result);
             }
+        });
 
-            display.value = result;
-        })
-
-        // 重設運算
         reset.addEventListener('click', function(){
             firstNumber = '';
             secondNumber = '';
             operator = '';
             display.value = '';
         });
+
+        function addThousandSeparator(number){
+            let stringNumber = number.toString();
+            const array = stringNumber.split('');
+            array.reverse();
+
+            let newArray = [];
+            for(let i = 0; i < array.length; i++){
+                if(i > 0 && i % 3 === 0){
+                    newArray.push(',');
+                }
+                newArray.push(array[i]);
+            }
+
+            newArray.reverse();
+            return newArray.join('');
+        }
     </script>
 </body>
