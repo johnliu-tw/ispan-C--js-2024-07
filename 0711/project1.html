@@ -33,7 +33,7 @@
 
         // 數字按鈕處理
         const buttons = document.querySelectorAll('.number');
-        for (let button of buttons) {
+        for (const button of buttons) {
             button.addEventListener('click', function(){
                 if(operator === ''){
                     firstNumber = firstNumber + button.innerText
