@@ -31,6 +31,7 @@
         let secondNumber = '';
         let operator = '';
 
+        // 數字按鈕處理
         const buttons = document.querySelectorAll('.number');
         for (let button of buttons) {
             button.addEventListener('click', function(){
@@ -44,6 +45,7 @@
             });
         }
 
+        // 運算符號處理
         const operatorButtons = document.querySelectorAll('.operator');
         for (const button of operatorButtons) {
             button.addEventListener('click', function(){
