@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myElement" class="active" test="test">
+        Hello World
+    </div>
+    <script>
+        myElement.innerText = 'Hello JavaScript';
+        myElement.classList.remove('active');
+        myElement.style.backgroundColor = 'Green';
+        window.alert(myElement.getAttribute('test'));
+        const ans = window.prompt('想要輸入的 class?');
+        myElement.classList.add(ans);
+    </script>
+</body>
+</html>
+
