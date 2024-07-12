@@ -77,10 +77,16 @@
         const allFilter = document.querySelector('#allFilter');
         const activeFilter = document.querySelector('#activeFilter');
         const completedFilter = document.querySelector('#completedFilter');
-        
-        allFilter.addEventListener('click', () => applyFilter('all'))
-        activeFilter.addEventListener('click', () => applyFilter('notDone'))
-        completedFilter.addEventListener('click', () => applyFilter('done'))
+
+        allFilter.addEventListener('click', () => applyFilter('all'));
+        activeFilter.addEventListener('click', () => applyFilter('notDone'));
+        completedFilter.addEventListener('click', () => applyFilter('done'));
+
+        // 鍵盤控制
+        const newTaskInput = document.querySelector('#newTaskInput');
+        newTaskInput.addEventListener('keydown', function(event){
+            console.log(event.key)
+        });
 
         // 刪除按鈕, 動態綁定
         // taskList.addEventListener('click', function(event){
