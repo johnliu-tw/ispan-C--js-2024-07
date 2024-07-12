@@ -3,8 +3,8 @@
 <button id="validateButton">驗證 ip</button>
 <p id="validationResult"></p>
 <script>
-    const checkValidIp = function(ipInput){
-        let ipArray = ipInput.split('.');
+    const checkValidIp = function(ipString){
+        let ipArray = ipString.split('.');
         if(ipArray.length !== 4){
             return false;
         }
