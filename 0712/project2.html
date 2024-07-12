@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="newTaskInput" placeholder="請輸入新的 task" />
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div>
+            <button id="allFilter">全部</button>
+            <button id="activeFilter">未完成</button>
+            <button id="completedFilter">完成</button>
+        </div>
+        <br />
+        <div>剩餘任務: <span id="tasksLeftCounter">0</span></div>
+        <button id="clearAllBtn">清除全部</button>
+    </body>
+    <script>
+        addTaskBtn.addEventListener('click', function(){
+            const li = document.createElement('li');
+            li.innerText = newTaskInput.value.trim();
+            taskList.append(li);
+            newTaskInput.value = '';
+        })
+    </script>
+</html>
