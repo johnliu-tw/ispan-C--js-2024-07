@@ -25,10 +25,16 @@
 
         // 新增任務
         const createTask = function(){
+            if(stopAdded){
+                return;
+            }
             const li = document.createElement('li');
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function(){
+                updateTaskLeft();
+            })
 
             const span = document.createElement('span');
             span.innerText = newTaskInput.value.trim();
@@ -46,6 +52,8 @@
             deleteBtn.innerText = '刪除';
             deleteBtn.addEventListener('click', function(){
                 deleteBtn.parentNode.remove();
+                updateButtonText();
+                updateTaskLeft();
             });
             // 刪除按鈕動態綁定所需
             // deleteBtn.className = 'delete';
@@ -56,6 +64,8 @@
             li.append(deleteBtn);
             taskList.append(li);
             newTaskInput.value = '';
+            updateButtonText();
+            updateTaskLeft();
         }
         const addTaskBtn = document.querySelector('#addTaskBtn');
         addTaskBtn.addEventListener('click', () => createTask());
@@ -92,7 +102,31 @@
                 newTaskInput.value = '';
             }
         });
+
+        // 新增按鈕控制
+        let stopAdded = false;
+        const updateButtonText = function(){
+            if(document.querySelectorAll('li').length >= 5){
+                addTaskBtn.innerText = '超過限制';
+                stopAdded = true;
+            } else {
+                addTaskBtn.innerText = 'Add';
+                stopAdded = false;
+            }
+        }
+
+        // 剩餘任務數量
+        const tasksLeftCounter = document.querySelector('#tasksLeftCounter');
+        const updateTaskLeft = function(){
+            tasksLeftCounter.innerText = taskList.querySelectorAll('input:not(:checked)').length;
+        }
         
+        // 清除全部按鈕
+        const clearAllBtn = document.querySelector('#clearAllBtn');
+        clearAllBtn.addEventListener('click', function(){
+            taskList.innerHTML = '';
+            updateTaskLeft();
+        });
 
         // 刪除按鈕, 動態綁定
         // taskList.addEventListener('click', function(event){
