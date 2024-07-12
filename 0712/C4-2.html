@@ -1,0 +1,24 @@
+<label for="">請輸入 ip 地址</label>
+<input type="text" id="ipInput" name="ip">
+<button id="validateButton">驗證 ip</button>
+<p id="validationResult"></p>
+<script>
+    const checkValidIp = function(ipInput){
+        let ipArray = ipInput.split('.');
+        if(ipArray.length !== 4){
+            return false;
+        }
+
+        for (const ip of ipArray) {
+            if( isNaN(ip/1) || ip < 0 || ip > 255){
+                return false;
+            }
+        }
+
+        return true;
+    }
+    validateButton.addEventListener('click', function(){
+        let isValid = checkValidIp(ipInput.value);
+        validationResult.innerText = isValid ? '通過' : '不通過';
+    });
+</script>
