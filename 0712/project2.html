@@ -21,9 +21,10 @@
         <button id="clearAllBtn">清除全部</button>
     </body>
     <script>
-        const addTaskBtn = document.querySelector('#addTaskBtn');
         const taskList = document.querySelector('#taskList');
 
+        // 新增任務
+        const addTaskBtn = document.querySelector('#addTaskBtn');
         addTaskBtn.addEventListener('click', function(){
             const li = document.createElement('li');
 
@@ -59,6 +60,27 @@
         });
 
 
+        // 篩選器
+        const applyFilter = function(filter){
+            const checkboxes = document.querySelectorAll('li input');
+            for (const checkbox of checkboxes) {
+                const isChecked = checkbox.checked;
+                if(filter === 'all'){
+                    checkbox.parentNode.style.display = 'list-item';
+                } else if(filter === 'done'){
+                    checkbox.parentNode.style.display = isChecked ? 'list-item' : 'none';
+                } else if(filter === 'notDone'){
+                    checkbox.parentNode.style.display = isChecked ? 'none' : 'list-item';
+                }
+            }
+        }
+        const allFilter = document.querySelector('#allFilter');
+        const activeFilter = document.querySelector('#activeFilter');
+        const completedFilter = document.querySelector('#completedFilter');
+        
+        allFilter.addEventListener('click', () => applyFilter('all'))
+        activeFilter.addEventListener('click', () => applyFilter('notDone'))
+        completedFilter.addEventListener('click', () => applyFilter('done'))
 
         // 刪除按鈕, 動態綁定
         // taskList.addEventListener('click', function(event){
