@@ -23,7 +23,11 @@
     <script>
         addTaskBtn.addEventListener('click', function(){
             const li = document.createElement('li');
-            li.innerText = newTaskInput.value.trim();
+
+            const span = document.createElement('span');
+            span.innerText = newTaskInput.value.trim();
+
+            li.append(span);
             taskList.append(li);
             newTaskInput.value = '';
         })
