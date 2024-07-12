@@ -24,8 +24,7 @@
         const taskList = document.querySelector('#taskList');
 
         // 新增任務
-        const addTaskBtn = document.querySelector('#addTaskBtn');
-        addTaskBtn.addEventListener('click', function(){
+        const createTask = function(){
             const li = document.createElement('li');
 
             const checkbox = document.createElement('input');
@@ -57,7 +56,9 @@
             li.append(deleteBtn);
             taskList.append(li);
             newTaskInput.value = '';
-        });
+        }
+        const addTaskBtn = document.querySelector('#addTaskBtn');
+        addTaskBtn.addEventListener('click', () => createTask());
 
 
         // 篩選器
@@ -85,8 +86,13 @@
         // 鍵盤控制
         const newTaskInput = document.querySelector('#newTaskInput');
         newTaskInput.addEventListener('keydown', function(event){
-            console.log(event.key)
+            if(event.key === 'Enter'){
+                createTask();
+            } else if(event.key === 'Escape'){
+                newTaskInput.value = '';
+            }
         });
+        
 
         // 刪除按鈕, 動態綁定
         // taskList.addEventListener('click', function(event){
